@@ -1,26 +1,3 @@
-"""
-hybrid_classifier.py
---------------------
-Plan A+B: combine local semantic similarity with LLM API calls to get
-the best balance of accuracy and cost.
-
-Decision logic
---------------
-                ┌─────────────────────────────────────────────────────┐
-                │  semantic_score >= HYBRID_HIGH_THRESHOLD            │
-                │  → Accept as relevant immediately (no API call)     │
-                ├─────────────────────────────────────────────────────┤
-                │  semantic_score < SEMANTIC_THRESHOLD                │
-                │  → Reject as irrelevant immediately (no API call)   │
-                ├─────────────────────────────────────────────────────┤
-                │  SEMANTIC_THRESHOLD <= score < HYBRID_HIGH_THRESHOLD│
-                │  → "Uncertain zone": send to LLM for final verdict  │
-                └─────────────────────────────────────────────────────┘
-
-In practice, only 10–25 % of comments fall in the uncertain zone,
-so the API call volume (and cost) is kept small.
-"""
-
 import pandas as pd
 from typing import List
 

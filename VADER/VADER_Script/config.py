@@ -1,4 +1,4 @@
-INPUT_FILE   = "your_file.csv"    # file route
+INPUT_FILE   = "Kiruna_file.csv"    # change
 TEXT_COLUMN  = "content"           # column
 OUTPUT_FILE  = "vader_results.xlsx"
 

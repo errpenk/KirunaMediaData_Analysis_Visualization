@@ -76,11 +76,7 @@ kiruna-media-data/
 │   ├── loader.py                   # CSV / XLSX reader with auto encoding detection
 │   ├── translator.py               # Language detection + Google Translate
 │   ├── sentiment.py                # VADER scoring and labelling
-│   ├── exporter.py                 # Formatted XLSX export
-│   ├── core_use.py                 # Minimal single-text example
-│   ├── instantiation.py            # Basic VADER instantiation example
-│   ├── monitor.py                  # Batch comment analysis example
-│   └── long_text.py                # Sentence-level analysis for long texts
+│   └── exporter.py                 # Formatted XLSX export
 │
 └── semantic_embedding/             # Module 5 — Semantic embedding & clustering
     ├── BasicEmbedding.py           # Generate sentence embeddings

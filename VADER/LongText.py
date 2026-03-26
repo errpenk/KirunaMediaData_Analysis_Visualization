@@ -30,6 +30,6 @@ long_text = (
 sentences = sent_tokenize(long_text)
 for sentence in sentences:
     vs = analyzer.polarity_scores(sentence)
-    print(f"Sentence : {sentence}")
-    print(f"Score    : {vs['compound']:.2f}")
+    print(f"Sentence: {sentence}")
+    print(f"Score: {vs['compound']:.2f}")
     print()

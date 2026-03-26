@@ -16,7 +16,9 @@ def detect_language(text):
 
 def detect_languages_in_file(file_path, text_column, batch_size=500):
     """
-    Read a CSV or XLSX file and perform language detection on a specified column
+    Read a CSV or XLSX file, detect the language of each row in text_column,
+    append a 'detected_lang' column, print a distribution summary,
+    and save the result as <original_name>_with_lang.xlsx
 
     file_path: File path, supports .csv and .xlsx
     text_column: Column name for which language needs to be detected
@@ -42,10 +44,13 @@ def detect_languages_in_file(file_path, text_column, batch_size=500):
     df["detected_lang"] = results
 
     # Statistics on the number of each language
-    lang_counts = df["detected_lang"].value_counts()
-    print("\nLanguage distribution：")
-    print(lang_counts.to_string())
+    # lang_counts = df["detected_lang"].value_counts()
+    # print("\nLanguage distribution：")
+    # print(lang_counts.to_string())
+    print("\nLanguage distribution:")
+    print(df["detected_lang"].value_counts().to_string())
 
+    
     # Save
     output_path = file_path.rsplit(".", 1)[0] + "_with_lang.xlsx"
     df.to_excel(output_path, index=False)
@@ -54,8 +59,9 @@ def detect_languages_in_file(file_path, text_column, batch_size=500):
     return df
 
 
-df_result = detect_languages_in_file(
-    file_path="EXAMPLE_file.xlsx",  
-    text_column="content",       
-    batch_size=500
-)
+if __name__ == "__main__":
+    df_result = detect_languages_in_file(
+        file_path="your_file.xlsx",   # change
+        text_column="content",         #change
+        batch_size=500, # change
+    )

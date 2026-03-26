@@ -1,8 +1,10 @@
 # short using
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
- 
+
 analyzer = SentimentIntensityAnalyzer()
-text = "TEXT"
+
+text   = "Kiruna's relocation is an incredible feat of urban planning!"
 result = analyzer.polarity_scores(text)
- 
-print(f"RESULT：{result}")
+
+print(f"Text   : {text}")
+print(f"Result : {result}")
